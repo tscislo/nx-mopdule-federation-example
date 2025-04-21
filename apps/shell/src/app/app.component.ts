@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuComponent } from '@nx-module-federation-example/menu';
+import { MenuComponent } from '@shell/menu';
 
 @Component({
   imports: [RouterModule, MenuComponent],

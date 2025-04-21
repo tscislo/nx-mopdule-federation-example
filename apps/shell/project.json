@@ -1,29 +1,32 @@
 {
-  "name": "nx-module-federation-example",
+  "name": "shell",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
   "prefix": "app",
-  "sourceRoot": "apps/nx-module-federation-example/src",
+  "sourceRoot": "apps/shell/src",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@angular-devkit/build-angular:browser",
+      "executor": "@nx/angular:webpack-browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/nx-module-federation-example",
-        "index": "apps/nx-module-federation-example/src/index.html",
-        "main": "apps/nx-module-federation-example/src/main.ts",
+        "outputPath": "dist/apps/shell",
+        "index": "apps/shell/src/index.html",
+        "main": "apps/shell/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/nx-module-federation-example/tsconfig.app.json",
+        "tsConfig": "apps/shell/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [
           {
             "glob": "**/*",
-            "input": "apps/nx-module-federation-example/public"
+            "input": "apps/shell/public"
           }
         ],
-        "styles": ["apps/nx-module-federation-example/src/styles.scss"],
-        "scripts": []
+        "styles": ["apps/shell/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/shell/webpack.config.ts"
+        }
       },
       "configurations": {
         "production": {
@@ -39,7 +42,10 @@
               "maximumError": "8kb"
             }
           ],
-          "outputHashing": "all"
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/shell/webpack.prod.config.ts"
+          }
         },
         "development": {
           "buildOptimizer": false,
@@ -53,21 +59,24 @@
       "defaultConfiguration": "production"
     },
     "serve": {
-      "executor": "@angular-devkit/build-angular:dev-server",
+      "executor": "@nx/angular:module-federation-dev-server",
       "configurations": {
         "production": {
-          "buildTarget": "nx-module-federation-example:build:production"
+          "buildTarget": "shell:build:production"
         },
         "development": {
-          "buildTarget": "nx-module-federation-example:build:development"
+          "buildTarget": "shell:build:development"
         }
       },
-      "defaultConfiguration": "development"
+      "defaultConfiguration": "development",
+      "options": {
+        "publicHost": "http://localhost:4200"
+      }
     },
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "buildTarget": "nx-module-federation-example:build"
+        "buildTarget": "shell:build"
       }
     },
     "lint": {
@@ -76,7 +85,7 @@
     "serve-static": {
       "executor": "@nx/web:file-server",
       "options": {
-        "buildTarget": "nx-module-federation-example:build",
+        "buildTarget": "shell:build",
         "spa": true
       }
     }

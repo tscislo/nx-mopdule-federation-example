@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@nx-module-federation-example/menu": ["libs/menu/src/index.ts"]
+      "@shell/menu": ["libs/menu/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
