@@ -9,4 +9,9 @@ export const appRoutes: Route[] = [
     path: 'basket',
     loadChildren: () => import('basket/Routes').then((m) => m!.remoteRoutes),
   },
+  {
+    path: '',
+    redirectTo: '/products',
+    pathMatch: 'full',
+  }
 ];

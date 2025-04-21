@@ -1,10 +1,18 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { Component, inject } from '@angular/core';
+import { ProductComponent } from './product/product.component';
+import { ProductsService } from '../products/products.service';
 
 @Component({
-  imports: [CommonModule, NxWelcomeComponent],
+  imports: [CommonModule, ProductComponent],
   selector: 'app-products-entry',
-  template: `<app-nx-welcome></app-nx-welcome>`,
+  template: `<h2>Products</h2>
+  @for (product of productsService.products; track product.id) {
+    <app-product [product]="product" />
+  }
+  `,
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  public productsService = inject(ProductsService)
+
+}

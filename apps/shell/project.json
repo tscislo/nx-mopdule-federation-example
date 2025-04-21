@@ -58,6 +58,22 @@
       },
       "defaultConfiguration": "production"
     },
+    "serve-with-remotes" : {
+      "executor": "@nx/angular:module-federation-dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "shell:build:production"
+        },
+        "development": {
+          "buildTarget": "shell:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "publicHost": "http://localhost:4200",
+        "devRemotes": ["products", "basket"]
+      }
+    },
     "serve": {
       "executor": "@nx/angular:module-federation-dev-server",
       "configurations": {
