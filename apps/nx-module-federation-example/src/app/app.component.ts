@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { MenuComponent } from '@nx-module-federation-example/menu';
 
 @Component({
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, MenuComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'nx-module-federation-example';
 }
