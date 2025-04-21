@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@shell/menu": ["libs/menu/src/index.ts"]
+      "@shell/menu": ["libs/menu/src/index.ts"],
+      "basket/Routes": ["apps/basket/src/app/remote-entry/entry.routes.ts"],
+      "products/Routes": ["apps/products/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

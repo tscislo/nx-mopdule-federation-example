@@ -9,4 +9,15 @@ import { MenuComponent } from '@shell/menu';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
+  public menuItems = [
+    {
+      name: "Products",
+      url: "/products",
+    },
+    {
+      name: "Basket",
+      url: "/basket",
+    }
+  ]
+
 }

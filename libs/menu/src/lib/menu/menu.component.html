@@ -1,6 +1,6 @@
 <ul>
   @for (item of items(); track item.name) {
-    <li><a>{{item.name}}</a></li>
+    <li><a [routerLink]="item.url">{{item.name}}</a></li>
   } @empty {
     <li>There are no menu items.</li>
   }
