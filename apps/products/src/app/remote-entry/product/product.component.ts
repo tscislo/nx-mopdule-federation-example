@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Product } from '../../products/product.interface';
+import { Product } from '@nmfe/common';
 
 @Component({
   selector: 'app-product',

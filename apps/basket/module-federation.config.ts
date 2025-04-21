@@ -5,6 +5,7 @@ const config: ModuleFederationConfig = {
   exposes: {
     './Routes': 'apps/basket/src/app/remote-entry/entry.routes.ts',
   },
+  remotes: ['products']
 };
 
 /**

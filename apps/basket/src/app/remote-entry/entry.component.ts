@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { ProductsService } from '@nmfe/common';
+import { ProductComponent } from 'products/ProductComponent';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, ProductComponent],
   selector: 'app-basket-entry',
-  template: `Basket`,
+  template: `<h2>Basket</h2>
+    @for (product of productsService.products; track product.id) {
+    <app-product [product]="product" />
+    } `,
 })
-export class RemoteEntryComponent {}
+export class RemoteEntryComponent {
+  public productsService = inject(ProductsService);
+}

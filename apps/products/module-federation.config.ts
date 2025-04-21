@@ -4,7 +4,7 @@ const config: ModuleFederationConfig = {
   name: 'products',
   exposes: {
     './Routes': 'apps/products/src/app/remote-entry/entry.routes.ts',
-    './Product': 'apps/products/src/app/remote-entry/product/product.component.ts',
+    './ProductComponent': 'apps/products/src/app/remote-entry/product/product.component.ts',
   },
 };
 

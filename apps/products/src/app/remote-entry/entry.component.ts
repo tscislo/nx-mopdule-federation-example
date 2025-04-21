@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ProductComponent } from './product/product.component';
-import { ProductsService } from '../products/products.service';
+import { ProductsService } from '@nmfe/common';
 
 @Component({
   imports: [CommonModule, ProductComponent],
