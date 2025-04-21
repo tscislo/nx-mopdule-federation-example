@@ -18,8 +18,10 @@
       "@nmfe/common": ["libs/common/src/index.ts"],
       "@nmfe/menu": ["libs/menu/src/index.ts"],
       "basket/Routes": ["apps/basket/src/app/remote-entry/entry.routes.ts"],
-      "products/Routes": ["apps/products/src/app/remote-entry/entry.routes.ts"],
-      "products/ProductComponent": ["apps/products/src/app/remote-entry/product/product.component.ts"]
+      "products/ProductComponent": [
+        "apps/products/src/app/remote-entry/product/product.component.ts"
+      ],
+      "products/Routes": ["apps/products/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -58,7 +58,7 @@
       },
       "defaultConfiguration": "production"
     },
-    "serve-with-remotes" : {
+    "serve-with-remotes": {
       "executor": "@nx/angular:module-federation-dev-server",
       "configurations": {
         "production": {
@@ -103,6 +103,22 @@
       "options": {
         "buildTarget": "shell:build",
         "spa": true
+      }
+    },
+    "deploy-prod": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "rm -rf prod && mkdir prod && cp -r ./apps/shell/* prod && cp -r ./apps/basket prod && cp -r ./apps/products prod",
+        "cwd": "dist"
+      }
+    },
+    "start-prod": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx http-server",
+        "cwd": "dist/prod"
       }
     }
   }

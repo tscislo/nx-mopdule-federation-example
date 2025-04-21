@@ -54,8 +54,8 @@
         }
       ]
     },
-    "e2e-ci--**/*": {
-      "dependsOn": ["^build"]
+    "deploy-*": {
+      "dependsOn": ["build"]
     }
   },
   "generators": {
